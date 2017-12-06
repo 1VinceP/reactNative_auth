@@ -1,23 +1,31 @@
 import React from 'react';
+import firebase from 'firebase';
 import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, Header } from './src/components/common/index';
+import LoginForm from './src/components/LoginForm';
 
-export default class App extends React.Component {
+class App extends React.Component {
+
+  componentWillMount() {
+    firebase.initializeApp({
+      apiKey: 'AIzaSyCuCEuh8Yvs5P-UAEk2rq0eWdjgCoDt-kw',
+      authDomain: 'native-auth-practice.firebaseapp.com',
+      databaseURL: 'https://native-auth-practice.firebaseio.com',
+      projectId: 'native-auth-practice',
+      storageBucket: 'native-auth-practice.appspot.com',
+      messagingSenderId: '758922250797'
+    })
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View>
+        <StatusBar />
+        <Header title={'Authentication'} color={'#fc9f00'} />
+        <LoginForm />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
