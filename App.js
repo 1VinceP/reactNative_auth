@@ -15,12 +15,7 @@ class App extends React.Component {
 
   componentWillMount() {
     firebase.initializeApp({
-      apiKey: 'AIzaSyCuCEuh8Yvs5P-UAEk2rq0eWdjgCoDt-kw',
-      authDomain: 'native-auth-practice.firebaseapp.com',
-      databaseURL: 'https://native-auth-practice.firebaseio.com',
-      projectId: 'native-auth-practice',
-      storageBucket: 'native-auth-practice.appspot.com',
-      messagingSenderId: '758922250797'
+      
     })
 
     firebase.auth().onAuthStateChanged( ( user ) => {
