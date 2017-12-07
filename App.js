@@ -15,7 +15,7 @@ class App extends React.Component {
 
   componentWillMount() {
     firebase.initializeApp({
-      
+      // auth credentials here
     })
 
     firebase.auth().onAuthStateChanged( ( user ) => {
